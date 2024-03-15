@@ -1,0 +1,108 @@
+.head1{
+    font-size: 25px;
+}
+.navimg{
+    height: 60px;
+    width: 50px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+}
+.left{
+    display: flex;
+    margin-left: 66px;
+}
+.left-txt{
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    position: relative;
+    left: -6px;
+    top: 15px;
+    color: white;
+}
+.user{
+    border: none;
+    border-radius: 3px;
+    background-color: darkslategrey;
+    color: white;
+    padding: 1px 6px;
+}
+.right{
+    margin-right: 80px;
+    padding-top: 0;
+}
+.admin{
+    margin-left: 5px;
+}
+.user:hover{
+    background-color: crimson;
+}
+
+.captcha-div{
+    display: flex;
+}
+.e-captcha{
+    width: 56%;
+}
+.i-captcha{
+    width: 38%;
+}
+.c-code{
+    width: 98%;
+    height: 34px;
+    border: 0.5px solid #afa3a3;
+    border-radius: 5px;
+    box-shadow: rgb(200, 208, 231) 3.2px 3.2px 8px 0px inset, rgb(255, 255, 255) -3.2px -3.2px 8px 0px inset;
+}
+.c-lable{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.i-rnd{
+    width: 100%;
+    border: 0.5px solid #afa3a3;
+    box-shadow: rgb(200, 208, 231) 3.2px 3.2px 8px 0px inset, rgb(255, 255, 255) -3.2px -3.2px 8px 0px inset;
+    border-radius: 5px;
+    padding: 3px;
+}
+.captcha-div{
+    width:100%
+}
+.reboot{
+    padding-right: 5px;
+}
+.hint-captcha{
+    font-size: 12px;
+    position: relative;
+    bottom: 19px;
+    white-space: nowrap;
+    background: gray;
+    padding: 2px 4px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+.list-style-g{
+    border:2px solid green;
+}
+.list-style-r{
+    border:2px solid crimson;
+}
+.ok-g{
+    background-color: green;
+}
+.unok-r{
+    background-color:crimson ;
+}
+.status{
+    border-radius: 50%;
+}
+a{
+    text-decoration: none;
+}

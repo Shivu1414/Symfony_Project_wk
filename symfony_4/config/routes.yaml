@@ -1,0 +1,19 @@
+# index:
+#    path: /
+#    controller: App\Controller\LoginController::login
+
+# user_blog: 
+#     path: /blog
+#     controller: App\Controller\BlogController::blog 
+
+# user_signup: 
+#     path: /signup
+#     controller: App\Controller\LoginController::signup 
+
+# user_login: 
+#     path: /logdata
+#     controller: App\Controller\LogController::logdata 
+
+# admin_login:
+#     path: /Admin
+#     controller: App\Controller\LoginController::admin 

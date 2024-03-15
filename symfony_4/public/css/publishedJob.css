@@ -1,0 +1,228 @@
+/* css of card data */
+*{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    min-height: 100vh;
+}
+.bod{
+    background-color: #dbe5e5;
+}
+.nav1{
+    background-color: #0048edfa;
+}
+.link1{
+    padding: 3px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: sans-serif;
+    background-color: cadetblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.link2{
+    padding: 3px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: sans-serif;
+    background-color: cadetblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+}
+.div1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.child1{
+    position: relative;
+    left: 10%;
+}
+.child2{
+    position: relative;
+    top: 13px;
+    right: 13%;
+}
+.img{
+    overflow:hidden;
+}
+.mini-container{
+    margin: auto;
+    width: 80%;
+}
+.form1{
+    margin-left: 20px;
+    display: flex;
+}
+.bg-nav{
+    background-color: teal;
+    border-radius: 0 0 5px 5px;
+}
+.srch{
+    width: 60%;
+}
+.search-form{
+    width: 100%;
+}
+.btn1{
+    width: 25%;
+    color: white;
+    margin-left: 10px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.card1{
+    border: 1px solid lightgray;
+    width: 97%;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+}
+.div2{
+    background-color: white;
+    border-radius: 5px;
+}
+.img1{
+    height: 109px;
+    width: 92%;
+    background-image: url("card1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: auto;
+}
+.card-content{
+    width: 95%;
+}
+.card-hd{
+    font-size: 18px;
+    font-family: sans-serif;
+    color: rgb(3, 112, 155);
+    font-weight: bold;
+}
+.card-para{
+    color: #000000;
+}
+.card-para2{
+    margin-left: 20px;
+}
+.div3{
+    width: 25%;
+    margin: auto;
+    border: none;
+    background-color: teal;
+    border-radius: 15px;
+}
+.btm-para{
+    margin-left:40px;
+    margin-top: 25px;
+    padding: 3px;
+}
+.btm-para2{
+    margin-left:55px;
+}
+.edit-btn, .pbls-btn{
+    text-decoration: none;
+    padding: 7px 20px;
+    margin-left: 22px;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: white;
+}
+.pbls-btn{
+    margin-left: 0;
+}
+.unpbls-btn{
+    margin-left: 5px;
+}
+.div4{
+    margin-bottom: 50px;
+}
+.link1:hover, .link2:hover{
+    background-color: crimson;
+}
+.img-job{
+    height: 109px;
+    width: 199px;
+}
+.pgn-ul {
+    display:inline-block;
+    margin-top: 20px;
+    margin-left: 41%;
+}
+.pgn-li{
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #ff000091;
+}
+.active{
+    background-color: blueviolet;
+}
+.del-btn{
+    background-color: #ffc107;
+    border-radius: 5px;
+    border: none;
+}
+.del-btn:hover{
+    color:white;
+    background-color: crimson;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.footer-div{
+    margin-top: 20px;
+}
+
+
+
+/* css of navbar */
+
+.logo{
+    height: 57px;
+    margin-left: 53px;
+}
+.navbar-head{
+    background-color: #004fe9;
+}
+.logo-content {
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+body{
+    background-color: #dbe5e5;
+}
+.body{
+    min-height: 100vh;
+}
+.link1{
+    padding: 3px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: sans-serif;
+    background-color: cadetblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.link1:hover{
+    background-color: crimson;
+    color: white;
+}
+.nav-right{
+    margin-right: 50px;
+}
+.left{
+    display: flex;
+}
+.webkul{
+    position: relative;
+    left: -17px;
+    padding-top: 11px;
+    font-size: 24px;
+}
+.paginate{
+    margin-left: 39%;
+}

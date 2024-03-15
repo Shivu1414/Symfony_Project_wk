@@ -1,0 +1,143 @@
+{% extends 'base.html.twig' %}
+{% block title %}Login Form{% endblock %}
+{% block stylesheets %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
+{% endblock %}
+
+{% block javascripts %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="{{ asset('js/adminProfile.js') }}"></script>
+
+{% endblock %}
+{% block body %}
+<div class="body">
+
+<link href="{{ asset('css/adminProfile.css') }}" rel="stylesheet"/>
+<div class="body">
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar p-0">
+        <div class="left">
+            <div class="logo">
+                <a class="navbar-brand " href="#">
+                <img src="{{ asset('img/webkul_logo.png') }}" class="logo" alt="">
+                </a>
+            </div>
+            <div class="webkul">
+            <span class="logo-content"> Webkul</span>
+            </div>
+        </div>
+        <div class="nav-right">
+          <a href="{{path('logout')}}" class="link1" onclick="return logout()">Logout</a>
+        </div>
+        </nav>
+    </div>
+
+
+
+        <div class="row m-5">
+      <div class="col-lg-2 "></div>
+      <div class="col-lg-8">
+           <div class="m-link">
+           <div class="btm-para">Here are all the users of Webkul</div>
+           </div>   
+      </div>
+      <div class="col-lg-2 ">
+          <div class="f-link s-link">
+           <a href="{{path('alldeladmin')}}" class="btn-a" onclick="return alldel()">All Delete</a>
+           </div>              
+      </div>
+    </div>
+
+
+    <div class="div2 ">
+    <form method="POST" action="{{path('multidelUser')}}" >
+    <input type="submit" name="mul_delete" class="mul-del" value="Delete" onclick="return mulDel()">
+      <table id="supact" class="table1" border="1" cellSpacing="0"> 
+
+        <thead class="thead-dark">
+          <tr >
+            <th class="col" width="9%"><input type="checkbox" id="select_all" name="" value=""></th>
+            <th class="col" width="15%">Picture </th>
+            <th class="col" width="13%">Name</th>
+            <th class="col" width="21%">Email</th>
+            <th class="col" width="12%">No. of Posts</th>
+            <th class="col" width="12%">Publish Posts</th>
+            <th class="col" width="18%">Actions</th>
+          </tr>
+        </thead>
+      </table>
+
+    {% for admin in admins %}  
+      <table class="table1 table2" border="1" cellSpacing="0" >
+        <tbody>
+          <tr height="" class="">
+            <td width="9%"><input type="checkbox" class="check" name="multiple_delete[]" value={{admin.id}}> </td>
+            </form>
+
+            <td width="15%"><img src={{asset(admin.url)}} alt="" class="img-data"></td>
+            <td width="13%">{{admin.firstname}} {{admin.lastname}}</td>
+            <td width="21%">{{admin.email}}</td>
+
+            <form method="POST" action="{{path('activepost',{'mail':admin.email})}}">
+            
+            <td width="12%"><input type="submit" name="activelink" class="all-posts" value={{userPostCounts[admin.id]}}></td>
+            <td width="12%"><input type="submit" formaction="{{path('activePublishPost',{'mail':admin.email})}}" name="" class="all-posts" value={{userPubPosts[admin.id]}}></td>
+            
+            <td width="18%">
+                <span id="hinttoggle" class="hint-css">Make Link Active Or Inactive</span><br>
+                <span class="toggle tgl">
+                <label class="switch" >
+                <input type="checkbox" name="checkbox" id="checkbox" class="checkbox" value="Active" >
+                <span class="slider round" ></span>
+                </label>
+                </span>             
+            </td>
+            </form>
+
+          </tr>
+        </tbody>
+     </table>
+    {% endfor %}
+        <div class="paginate">
+        {{knp_pagination_render(admins)}}
+        </div>
+</div>
+
+
+
+</div>
+<div class="container-fluid p-0 mt-5">
+
+  <footer class="bg-dark text-center text-white pt-5">
+  <div class="container p-4 pb-0">
+    <section class="mb-4">
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+    </section>
+  </div>
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://webkul.com/">webkul.com</a>
+  </div>
+</footer>
+  
+</div>
+
+{% endblock %}

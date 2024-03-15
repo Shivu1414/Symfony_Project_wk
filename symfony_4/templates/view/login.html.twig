@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+{% block title %}Login Form{% endblock %}
+{% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+{% endblock %}
+{% block body %}
+
+<link href="{{ asset('css/login.css') }}" rel="stylesheet"/>
+<link href="{{asset('css/common.css')}}" rel="stylesheet"/>
+
+
+
+ <div class="navbar p-0" onload="generate()">
+    <div class="left">
+        <img src="{{ asset('img/navimg.png') }}" alt="Not mentioned" class="navimg"/>
+        <div class="left-div">
+        <span class="left-txt">Webkul</span>
+        </div>
+    </div>
+
+    <div class="right">
+    <a href="{{path('signup')}}">
+    <input type="submit" class="user" value="User Registration">
+    </a>
+    <a href="{{path('admin')}}">
+    <input type="submit" class="user admin" value="Admin Registration">
+    </a>
+    </div>
+ </div>
+
+    <div class="error-div" >
+         <div class="live-error" id="liveError">{{error}}
+         {# <span class="cross"><a href="" onclick="function liveError()"><i class="fa-solid fa-xmark"></i></a></span> #}
+         </div>
+    </div>
+
+ <div class="container-fluid">
+        <div class="div2 p-2">
+
+
+            <div class="child3">
+                <h3 class="head1">Login</h3>
+            </div>
+
+
+            {# <form method="post" autocomplete="off" action="{{path('logdata')}}" onsubmit="return cnfLogin()"> #}
+            <form method="post" autocomplete="off" action="{{path('logdata')}}" onsubmit="return cnfLogin()">
+            
+            <p>
+                <span class="req-fd">* required field</span>
+                <span class="toggle tgl">
+                <label class="switch" >
+                <input type="checkbox" name="checkbox" value="Admin" >
+                <span class="slider round" ></span>
+                </label>
+                </span>
+            </p>
+
+                <div class="form-content">
+                    <span class="para1">E-mail:</span>
+                    <span class="req-fd" id="mailErr">*</span>
+                    <span id="okmail" class="status ok-g hcm"><i class="fa-regular fa-circle-check"></i></span>
+                    <span id="unokmail" class="status unok-r hcm"><i class="fa-regular fa-circle-xmark"></i></span>
+                    <span id="hint" class="hint-css"></span>
+                    <br><input type="text" name="email"  value="" class="inp" id="emailVal">
+                    <br>
+                </div>
+
+                <div class="form-content">
+                    <span class="para1">Password:</span>
+                    <span class=" req-fd" id="passErr">*</span>
+                    <span id="okpass" class="status ok-g hcp"><i class="fa-regular fa-circle-check"></i></span>
+                    <span id="unokpass" class="status unok-r hcp"><i class="fa-regular fa-circle-xmark"></i></span>
+                    <span id="hintpass" class="hint-css-p"></span>
+                    <br><input type="password" name="password" value="" class="inp" id="passVal">
+                    <br>
+                </div>
+
+                <div class="form-content captcha-div mb-0">
+                    <div class="e-captcha">
+                        <label for="" class="c-lable">Enter Captcha:</label>
+                        <span id="okcaptcha" class="status ok-g hcc"><i class="fa-regular fa-circle-check"></i></span>
+                        <span id="unokcaptcha" class="status unok-r hcc"><i class="fa-regular fa-circle-xmark"></i></span>
+                        <span id="hintcaptcha" class="hint-captcha"></span>
+                        <input type="text" id="captch" class="c-code">
+                    </div>
+
+                    <div class="inline reboot" onclick="generate()" id="hc">
+                        <br>
+                        <i class="fa-solid fa-rotate-right logo"></i>
+                    </div>
+
+                    <div id="cImg" class="inline i-captcha" selectable="False">
+                        <label for="" class="c-lable">Captcha Code:</label><br>
+                        <p class="i-rnd"><del><span id="random"></span></del></p>
+                    </div>
+                </div>
+
+
+
+                <div class="form-content mt-0">
+                    <span id="hintcb" class="hint-css-p  hint-css-cb"></span><br>
+                    <input type="checkbox" name="" value=" " class="check-box-term" id = "checkbox">
+                    <label for="">I accept the Terms and Conditions.</label>
+                    <span class="error req-fd">*</span>
+                        <span id="okcb" class="status ok-g hcb"><i class="fa-regular fa-circle-check"></i></span>
+                        <span id="unokcb" class="status unok-r hcb"><i class="fa-regular fa-circle-xmark"></i></span>
+                </div>
+
+                <div class="form-content text-center">
+                    <input type="submit" name="submit" value="LOGIN NOW" class="preview" id="click" >
+                </div>
+            </form>
+        </div>
+    </div>
+
+<div class="foot-div">
+<div class="container-fluid p-0 footer-div">
+
+<footer class="bg-dark text-center text-white pt-5">
+  <div class="container p-4 pb-0">
+    <section class="mb-4">
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+    </section>
+  </div>
+
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2020 Copyright:
+    <a class="text-white" href="https://webkul.com/">Webkul.com</a>
+  </div>
+</footer>
+</div>  
+</div>
+
+    <script src="{{ asset('js/login.js') }}"></script>
+{% endblock %}

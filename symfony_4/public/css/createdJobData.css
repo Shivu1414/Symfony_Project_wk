@@ -1,0 +1,256 @@
+.nav1 {
+    background-color: #0048edfa;
+}
+
+.div2{
+    width: 90%;
+    margin-left: 92px;
+    margin-top: 0px;
+}
+.table1{
+    width: 100%;
+    text-align: center;
+}
+body
+{
+    margin: 0;
+}
+.body{
+    min-height: 100vh;
+}
+.thead-dark{
+    background-color: darkslategrey;
+    color: white;
+}
+.col{
+    padding: 2px;
+}
+.delete{
+    font-size: 18px;
+    color: black;
+    margin-left: 10px;
+}
+.update{
+    font-size: 18px;
+    color: black;
+    margin-left: 10px;
+    /* margin-right: 8px; */
+}
+.publish{
+    font-size: 18px;
+    color: black;
+    margin-left: 10px;
+}
+.delete:hover{
+    color: rgb(81, 209, 209);
+}
+.update:hover{
+    color: rgb(81, 209, 209);
+}
+.publish:hover{
+    color: rgb(81, 209, 209);
+}
+
+.btm-para {
+    margin-left: 15px;
+    padding: 3px;
+}
+.pgn-ul {
+    margin-left: 44%;
+    margin-top: 5px;
+    display:inline-block;
+}
+.pgn-li{
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #ff000091;
+}
+.active{
+    background-color: blueviolet;
+}
+.text-light{
+    text-decoration: none;
+    color:white;
+}
+
+
+.img-data{
+    height: 45px;
+    width: 55px;
+    margin: 5px;
+}
+.table2{
+    /* border: 1px solid; */
+    border-top: none;
+}
+
+.logo{
+    height: 49px;
+    margin-left: 53px;
+}
+.navbar{
+    background-color: #004fe9;
+}
+.logo-content{
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    position: relative;
+    top:8px ;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.nav-left{
+    display: flex;
+}
+.link1{
+    text-decoration: none;
+    background-color: cadetblue;
+    color: white;
+    border-radius: 5px;
+    padding: 4px 7px;
+}
+.link1:hover{
+    background-color:crimson;
+} 
+.nav-right{
+    margin-right: 37px;
+}
+.f-link{
+    text-align: center;
+    margin-left: 41%;
+    width: 39%; 
+    border: none;
+    background-color: darkslategray;
+    border-radius: 5px;
+    padding: 4px 6px;
+    color: white;
+}
+
+.btn-a{
+    color: white;
+    text-decoration: none;
+}
+.btn-a:hover,.f-link:hover{
+    background-color:crimson;
+    color: white;
+}
+
+.s-link{
+    text-align: center;
+    margin-left: 60px;
+    width: 85%; 
+    border: none;
+    background-color: darkslategray;
+    border-radius: 5px;
+    padding: 4px 6px;
+    color: white;
+    text-align: center;
+    position: relative;
+    right: 62px;
+}
+.m-link{
+    text-align: center;
+    width: 75%;
+    /* margin: auto; */
+    border: none;
+    background-color:darkslategray;
+    border-radius: 15px;
+    color: white;
+}
+.footer-div{
+    margin-top: 20px;
+}
+.mul-del{
+    border: none;
+    border-radius: 5px;
+    margin: 4px;
+    background-color: aqua;
+    color: darkslategray;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+.mul-del:hover{
+    background-color:crimson;
+}
+
+
+.logo{
+    height: 49px;
+    margin-left: 53px;
+}
+.navbar {
+    background-color: #004fe9;
+}
+.logo-content {
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+.body{
+    min-height: 100vh;
+}
+.link1{
+    padding: 3px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: sans-serif;
+    background-color: cadetblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+.link1:hover{
+    background-color: crimson;
+    color: white;
+}
+.nav-right{
+    margin-right: 50px;
+}
+.left{
+    display: flex;
+}
+.webkul{
+    position: relative;
+    left: -17px;
+}
+.paginate{
+    margin-left: 39%;
+}
+.mul-del{
+    background-color: darkslategrey;
+    color: aqua;
+    padding: 4px 23px;
+    position: absolute;
+    top: 10.6%;
+    left: 7%;
+}
+.mul-del:hover{
+    color:white;
+}
+
+@media(max-width:990px){
+    .f-link, .m-link{
+      width: 100%;
+    }
+    .f-link{
+        margin-left: 0px;
+    }
+    .s-link{
+        margin-left: 60px;
+    }
+    .m-link{
+        margin-top: 5px;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+    .div2{
+        margin-left: 48px;
+    }
+  }
+
+ 
